@@ -52,37 +52,42 @@ public LinkedList<Poisson> getPoissons() {
 public void setPoissons(LinkedList<Poisson> poissons) {
 	this.poissons = poissons;
 }
+/* Pour les fontion add"Poisson":
+ * Ces fonctions ajoutent un poisson d'un certain type a la liste de  poisson de l'écosystème
+ * à une certaine position entrée en paramètre.
+ * */
+
 
 public void addSardine(int x, int y) {
 	
-	poissons.add(new Sardine(x, y, 1, 5, this));
+	poissons.add(new Sardine(x, y, 5, 1, this));
 	System.out.println("Une sardine a été ajoutée à la position" + x + "et" + y);
 	
 }
 
 public void addMaquereau(int x, int y) {
 	
-	poissons.add(new Maquereau(x, y, 1, 5, this));
+	poissons.add(new Maquereau(x, y, 5, 2, this));
 	System.out.println("Un maquereau a été ajouté à la position" + x + "et" + y);
 	
 }
 
 public void addPRequin(int x, int y) {
 	
-	poissons.add(new PetitRequin(x, y, 1, 5, this));
+	poissons.add(new PetitRequin(x, y, 5, 3, this));
 	System.out.println("Un petit requin a été ajouté à la position" + x + "et" + y);
 	
 }
 
 public void addCrevette(int x, int y) {
 	
-	poissons.add(new Crevette(x, y, 1, 5, this));
+	poissons.add(new Crevette(x, y, 5, 0, this));
 	System.out.println("Une crevette a été ajoutée à la position" + x + "et" + y);
 	
 }
 public void addGRequin(int x, int y) {
 	
-	poissons.add(new GrandRequin(x, y, 1, 5, this));
+	poissons.add(new GrandRequin(x, y, 5, 4, this));
 	System.out.println("Un grand requin a été ajouté à la position" + x + "et" + y);
 	
 }

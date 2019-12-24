@@ -13,7 +13,7 @@ public class GrandRequin extends Poisson{
 	
 	public void bouger()
 	{System.out.println("Grand Requin bouge !"); 
-	this.observer();
+	//this.observer();
 	int a = getAbs();
 	int b = getOrd();
 	setAbs(a + 10 );
@@ -22,7 +22,9 @@ public class GrandRequin extends Poisson{
 	}
 	
 	public void manger()
-	{System.out.println("Grand Requin mange !"); 
+	{
+		this.viser();
+		//System.out.println("Grand Requin mange !"); 
 	}
 	
 	

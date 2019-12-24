@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.*;
 public abstract class Poisson {
 	
+
+	
 	private int x; //Position
 	private int y; // Position
 	private int cap; //Capacité = stockage de nourriture
@@ -52,7 +54,7 @@ public abstract class Poisson {
 	for (int j=0;j<ecosys.getPoissons().size();j++){
 		Poisson voisin = ecosys.getPoissons().get(j);
 		int d = Math.abs(this.x-voisin.x) + Math.abs(this.y-voisin.y);
-		if (d < dist ) {if (this != voisin){
+		if (d < dist) {if (this != voisin){
 		dist = d;
 		pos = j;
 		}}
@@ -62,13 +64,58 @@ public abstract class Poisson {
 	coord[0] = voisin.getAbs();
 	coord[1] = voisin.getOrd();
 	
-	//System.out.println("le poisson le plus proche se trouve en ["+coord[0]+","+coord[1]+"] !");
 	
-	return pos;
+	if ( this.caractere > voisin.caractere) {
+	System.out.println("le poisson le plus proche se trouve en ["+coord[0]+","+coord[1]+"] !");
+	return pos;}
 	
-	
+	else { 
+		System.out.println("le poisson le plus proche n'est pas mangeable !");
+	return 0;
+	}
 	
 	}
+	
+	
+	
+	public void viser()
+	{//System.out.println("Poisson observe !"); 
+	
+	int pos = 0 ;
+	int[] coord = new int[2];
+	
+	int dist = 100000; //Grande valeur pour initialisation du minimum
+	for (int j=0;j<ecosys.getPoissons().size();j++){
+		Poisson voisin = ecosys.getPoissons().get(j);
+		int d = Math.abs(this.x-voisin.x) + Math.abs(this.y-voisin.y);
+
+		if (d < dist && d < 10) {if (this != voisin){ // Cette condition est a verifier.. je n'arrive pas !
+		dist = d;
+		System.out.println(dist);
+		pos = j;
+		}}
+	}
+	
+	Poisson voisin = ecosys.getPoissons().get(pos);
+	coord[0] = voisin.getAbs();
+	coord[1] = voisin.getOrd();
+
+	
+	if ( this.caractere > voisin.caractere) {
+	System.out.println("le poisson ["+coord[0]+","+coord[1]+"] va etre mangé!");
+	ecosys.getPoissons().remove(voisin);}
+	
+	else { 
+		System.out.println("le poisson le plus proche n'est pas mangeable ou trop loin !");
+
+	}
+	
+	}
+	
+	
+	
+	
+	
 	
 	public int[] find_pos_poisson(int j ) {
 		
