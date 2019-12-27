@@ -16,8 +16,8 @@ public class GrandRequin extends Poisson{
 	//this.observer();
 	int a = getAbs();
 	int b = getOrd();
-	setAbs(a + 10 );
-	setOrd(b - 10 );
+	setAbs(a + 12 );
+	setOrd(b - 12 );
 
 	}
 	
