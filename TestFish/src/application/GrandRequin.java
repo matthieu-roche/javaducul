@@ -11,21 +11,39 @@ public class GrandRequin extends Poisson{
 	
 	
 	
-	public void bouger()
-	{System.out.println("Grand Requin bouge !"); 
-	//this.observer();
-	int a = getAbs();
-	int b = getOrd();
-	setAbs(a + 12 );
-	setOrd(b - 12 );
-
-	}
+//	public void bouger()
+//	{
+//		System.out.println("Grand Requin bouge !"); 
+//		//this.observer();
+//	int a = getAbs();
+//	int b = getOrd();
+//	setAbs(a + 12 );
+//	setOrd(b - 12 );
+//
+//	}
 	
-	public void manger()
+	public void bouger2()
 	{
-		this.viser();
-		//System.out.println("Grand Requin mange !"); 
+		System.out.println("Grand Requin bouge !"); 
+		Poisson voisin = this.observer2();
+		
+		if (voisin instanceof Maquereau) {
+			this.manger2(voisin);
+		}
+		if (voisin instanceof Sardine) {
+			this.manger2(voisin);
+		}
+		
+		int a = getAbs();
+		int b = getOrd();
+		setAbs(a + 12 );
+		setOrd(b - 12 );
 	}
+
+	
+	
+
+	
 	
 	
 

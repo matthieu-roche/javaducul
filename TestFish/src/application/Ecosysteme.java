@@ -61,44 +61,45 @@ public void setPoissons(LinkedList<Poisson> poissons) {
 public void addSardine(int x, int y) {
 	
 	poissons.add(new Sardine(x, y, 5, 1, this));
-	System.out.println("Une sardine a été ajoutée à la position" + x + "et" + y);
+	System.out.println("Une sardine a été ajoutée à la position " + x + " et " + y);
 	
 }
 
 public void addMaquereau(int x, int y) {
 	
 	poissons.add(new Maquereau(x, y, 5, 2, this));
-	System.out.println("Un maquereau a été ajouté à la position" + x + "et" + y);
+	System.out.println("Un maquereau a été ajouté à la position " + x + " et " + y);
 	
 }
 
 public void addPRequin(int x, int y) {
 	
 	poissons.add(new PetitRequin(x, y, 5, 3, this));
-	System.out.println("Un petit requin a été ajouté à la position" + x + "et" + y);
+	System.out.println("Un petit requin a été ajouté à la position " + x + " et " + y);
 	
 }
 
 public void addCrevette(int x, int y) {
 	
 	poissons.add(new Crevette(x, y, 5, 0, this));
-	System.out.println("Une crevette a été ajoutée à la position" + x + "et" + y);
+	System.out.println("Une crevette a été ajoutée à la position " + x + " et " + y);
 	
 }
 public void addGRequin(int x, int y) {
 	
 	poissons.add(new GrandRequin(x, y, 5, 4, this));
-	System.out.println("Un grand requin a été ajouté à la position" + x + "et" + y);
+	System.out.println("Un grand requin a été ajouté à la position " + x + " et " + y);
 	
 }
 
-public void UnTour()
-{for (int j=0; j<poissons.size(); j++)
-	{Poisson bete = poissons.get(j); // chaque poisson bouge à chaque tour
-	bete.bouger();	
-	}
-}
-
+//public void UnTour()
+//{for (int j=0; j<poissons.size(); j++)
+//	{Poisson bete = poissons.get(j); // chaque poisson bouge à chaque tour
+//	bete.bouger2();	
+//	
+//	}
+//}
+//
 
 
 /** simulation de l'ecosysteme */
@@ -120,16 +121,16 @@ public void create(int tab[], int nbs, int nbm, int nbgr, int nbpt, int nbt)
     
     }
 
-public void simule()
-{
-
- // for (int i=0 ; i<nb_tour ; i++)
-    {
-	//UnTour();
-	System.out.println(poissons);
-	System.out.println("je simule un tour");
-    }
-}
+//public void simule()
+//{
+//
+// // for (int i=0 ; i<nb_tour ; i++)
+//    {
+//	//UnTour();
+//	System.out.println(poissons);
+//	System.out.println("je simule un tour");
+//    }
+//}
 
 
 

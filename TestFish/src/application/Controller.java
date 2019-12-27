@@ -414,6 +414,8 @@ public void AjouterPoissons2(ActionEvent event) throws IOException
             	int ale2 = rando.nextInt(max_y);
             	tab2[0] = ale;
             	tab2[1] = ale2;
+            	//tab2[0] = 0;
+            	//tab2[1] = 0;
                 addButtonSardine(tab2); //La position de la sardine sera completement aléatoire
                 
                 }
@@ -426,6 +428,8 @@ public void AjouterPoissons2(ActionEvent event) throws IOException
             	int ale2 = rando.nextInt(max_y);
             	tab2[0] = ale;
             	tab2[1] = ale2;
+            	//tab2[0] = 500;
+            	//tab2[1] = 0;
                 addButtonMaquereau(tab2); //La position du maquereau sera completement aléatoire
   
             }
@@ -435,6 +439,8 @@ public void AjouterPoissons2(ActionEvent event) throws IOException
             	int ale2 = rando.nextInt(max_y);
             	tab2[0] = ale;
             	tab2[1] = ale2;
+            	//tab2[0] = 0;
+            	//tab2[1] = 250;
                 addButtonGRequin(tab2);
             }
             
@@ -443,6 +449,8 @@ public void AjouterPoissons2(ActionEvent event) throws IOException
             	int ale2 = rando.nextInt(max_y);
             	tab2[0] = ale;
             	tab2[1] = ale2;
+            	//tab2[0] = 500;
+            	//tab2[1] = 250;
                 addButtonPRequin(tab2);
             }          
 //           
@@ -467,7 +475,7 @@ public void AjouterPoissons2(ActionEvent event) throws IOException
                hbox.getChildren().remove(Number_M);
                 hbox.getChildren().remove(Number_GR);
                 hbox.getChildren().remove(Number_PR);
-                hbox.getChildren().remove(Number_T);
+//                hbox.getChildren().remove(Number_T);
                hbox.getChildren().remove(Number_C);
                 vbox.getChildren().remove(bnt);
                 
@@ -504,9 +512,10 @@ public void Move_poisson() throws IOException {
 		
 	{
 	Poisson bete = POISSONS.get(j); //On regarde la bete d'indice j
-	bete.bouger(); //On la fait bouger
-	bete.manger(); //On la fait manger 
-
+	bete.bouger2();
+	//bete.bouger(); //On la fait bouger
+	//bete.manger(); //On la fait manger 
+	System.out.println(" Il reste encore " + POISSONS.size()+ " Poissons dans l'aquarium");
 	tab = bete.find_pos_poisson(j); //On determine la nouvelle position de la bete j apres ces actions => newpos = tab
 	
 	if (bete instanceof Sardine) {
