@@ -41,10 +41,48 @@ public abstract class Poisson {
 //	    System.out.println("Création d'un poisson en ["+x+","+y+"] !");  
 	    
 	}
-	public abstract void manger();
-	public abstract void bouger();
+	public abstract void bouger2();
 	
-	public int observer()
+	public void manger2(Poisson voisin)
+	{
+		System.out.println("Un poisson est mangé !"); 
+		ecosys.getPoissons().remove(voisin);
+	}
+	
+	
+//	public int observer()
+//	{//System.out.println("Poisson observe !"); 
+//	
+//	int pos = 0 ;
+//	int[] coord = new int[2];
+//	
+//	int dist = 100000; //Grande valeur pour initialisation du minimum
+//	for (int j=0;j<ecosys.getPoissons().size();j++){
+//		Poisson voisin = ecosys.getPoissons().get(j);
+//		int d = Math.abs(this.x-voisin.x) + Math.abs(this.y-voisin.y);
+//		if (d < dist) {if (this != voisin){
+//		dist = d;
+//		pos = j;
+//		}}
+//		}
+//	
+//	Poisson voisin = ecosys.getPoissons().get(pos);
+//	coord[0] = voisin.getAbs();
+//	coord[1] = voisin.getOrd();
+//	
+//	
+//	if ( this.caractere > voisin.caractere) {
+//	System.out.println("le poisson le plus proche se trouve en ["+coord[0]+","+coord[1]+"] !");
+//	return pos;}
+//	
+//	else { 
+//		System.out.println("le poisson le plus proche n'est pas mangeable !");
+//	return 0;
+//	}
+//	
+//	}
+	
+	public Poisson observer2()
 	{//System.out.println("Poisson observe !"); 
 	
 	int pos = 0 ;
@@ -58,59 +96,51 @@ public abstract class Poisson {
 		dist = d;
 		pos = j;
 		}}
-	}
+		}
 	
 	Poisson voisin = ecosys.getPoissons().get(pos);
 	coord[0] = voisin.getAbs();
 	coord[1] = voisin.getOrd();
-	
-	
-	if ( this.caractere > voisin.caractere) {
 	System.out.println("le poisson le plus proche se trouve en ["+coord[0]+","+coord[1]+"] !");
-	return pos;}
-	
-	else { 
-		System.out.println("le poisson le plus proche n'est pas mangeable !");
-	return 0;
-	}
+	return voisin;
 	
 	}
 	
 	
-	
-	public void viser()
-	{//System.out.println("Poisson observe !"); 
-	
-	int pos = 0 ;
-	int[] coord = new int[2];
-	
-	int dist = 100000; //Grande valeur pour initialisation du minimum
-	for (int j=0;j<ecosys.getPoissons().size();j++){
-		Poisson voisin = ecosys.getPoissons().get(j);
-		int d = Math.abs(this.x-voisin.x) + Math.abs(this.y-voisin.y);
-
-		if (d < dist && d < 10) {if (this != voisin){ // Cette condition est a verifier.. je n'arrive pas !
-		dist = d;
-		System.out.println(dist);
-		pos = j;
-		}}
-	}
-	
-	Poisson voisin = ecosys.getPoissons().get(pos);
-	coord[0] = voisin.getAbs();
-	coord[1] = voisin.getOrd();
-
-	
-	if ( this.caractere > voisin.caractere) {
-	System.out.println("le poisson ["+coord[0]+","+coord[1]+"] va etre mangé!");
-	ecosys.getPoissons().remove(voisin);}
-	
-	else { 
-		System.out.println("le poisson le plus proche n'est pas mangeable ou trop loin !");
-
-	}
-	
-	}
+//	
+//	public void viser()
+//	{//System.out.println("Poisson observe !"); 
+//	
+//	int pos = 0 ;
+//	int[] coord = new int[2];
+//	
+//	int dist = 100000; //Grande valeur pour initialisation du minimum
+//	for (int j=0;j<ecosys.getPoissons().size();j++){
+//		Poisson voisin = ecosys.getPoissons().get(j);
+//		int d = Math.abs(this.x-voisin.x) + Math.abs(this.y-voisin.y);
+//
+//		if (d < dist && d < 10) {if (this != voisin){ // Cette condition est a verifier.. je n'arrive pas !
+//		dist = d;
+//		System.out.println(dist);
+//		pos = j;
+//		}}
+//	}
+//	
+//	Poisson voisin = ecosys.getPoissons().get(pos);
+//	coord[0] = voisin.getAbs();
+//	coord[1] = voisin.getOrd();
+//
+//	
+//	if ( this.caractere > voisin.caractere) {
+//	System.out.println("le poisson ["+coord[0]+","+coord[1]+"] va etre mangé!");
+//	ecosys.getPoissons().remove(voisin);}
+//	
+//	else { 
+//		System.out.println("le poisson le plus proche n'est pas mangeable ou trop loin !");
+//
+//	}
+//	
+//	}
 	
 	
 	
