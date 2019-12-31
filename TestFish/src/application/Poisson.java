@@ -153,7 +153,7 @@ public abstract class Poisson {
 		int[] tab = new int [2];
 		int a = getAbs();
 		int b = getOrd();
-		System.out.println("posx vaut " + a + " posy vaut " + b );
+		System.out.println("Nouvelle position  [" + a + " , " + b + "]" );
 		
 		tab[0]=a;
 		tab[1] = b;

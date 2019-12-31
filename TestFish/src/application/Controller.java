@@ -475,7 +475,7 @@ public void AjouterPoissons2(ActionEvent event) throws IOException
                hbox.getChildren().remove(Number_M);
                 hbox.getChildren().remove(Number_GR);
                 hbox.getChildren().remove(Number_PR);
-//                hbox.getChildren().remove(Number_T);
+                hbox.getChildren().remove(Number_T);
                hbox.getChildren().remove(Number_C);
                 vbox.getChildren().remove(bnt);
                 
@@ -515,7 +515,7 @@ public void Move_poisson() throws IOException {
 	bete.bouger2();
 	//bete.bouger(); //On la fait bouger
 	//bete.manger(); //On la fait manger 
-	System.out.println(" Il reste encore " + POISSONS.size()+ " Poissons dans l'aquarium");
+	
 	tab = bete.find_pos_poisson(j); //On determine la nouvelle position de la bete j apres ces actions => newpos = tab
 	
 	if (bete instanceof Sardine) {
@@ -532,6 +532,7 @@ public void Move_poisson() throws IOException {
 		moveButtonCrevette(tab);}//Si c'est une crevette, on le place à la position tab
 	
 	}
+	System.out.println(" Il reste encore " + POISSONS.size()+ " Poissons dans l'aquarium");
 	
 
 	}
