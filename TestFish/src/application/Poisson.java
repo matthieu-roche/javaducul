@@ -23,13 +23,16 @@ public abstract class Poisson {
 	public Poisson(int abs, int ord, int t, int cara, int v, int dir, int capa, Ecosysteme eco) {
 	        
 	    taille = t;
-	    caractere = cara;
+	    //caractere = cara; // ne sert a rien
 	    vitesse = v;
-	    direction = dir;
+	    direction = dir; // ne sert a rien pour l'instant non plus
 	    cap = capa;
 	    ecosys = eco;
 	    x = abs;
 	    y = ord;
+	    faim = cap; // au debut les poissons n'ont pas faim. Leur ventre est rempli donc la variable faim
+	    			// est initialisée a la capacité de stockage du poisson.
+	    
 	    
 	    
 //	    int min = 0;
@@ -47,6 +50,7 @@ public abstract class Poisson {
 	{
 		System.out.println("Un poisson est mangé !"); 
 		ecosys.getPoissons().remove(voisin);
+		setFaim(this.cap); // on remet le compteur faim du poisson au max (capacité)
 	}
 	
 	
@@ -240,7 +244,10 @@ public abstract class Poisson {
 	public void setTaille(int taille) {
 		this.taille = taille;
 	} 
-
+	
+	public Ecosysteme getEco() {
+		return ecosys;
+	}
 	public String toString() {
 		return "je suis en " + x + "," + y + "je peux rester "+faim+" tours sans manger, j'ai une vitesse de "+vitesse+" et j ai une direction de "+direction+" , un caractere de "+caractere+" \n";
 				

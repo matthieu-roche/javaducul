@@ -66,7 +66,6 @@ public class Maquereau extends Poisson{
 			if (norm <= distsecu) {
 				this.manger2(voisin); // la proie est mangé
 				System.out.println("Il a mangé la proie");
-				//this.faim = cap; //défini dans le constructeur de poisson, normalement vu que Sardine hérite de poisson ça passe
 				setAbs(xv);
 				setOrd(yv);				
 			}
@@ -76,6 +75,7 @@ public class Maquereau extends Poisson{
 					if (ab + (xv-ab)*vit/norm > 0) { //Pas trop à gauche
 						if (or + (yv-or)*vit/norm < 300) { //Pas trop bas
 							if (or + (yv-or)*vit/norm > 0) { //Pas trop haut
+								// ajouter pour que les poissons n'aillent pas au meme coordonnées et qu'ils ne soient pas confondus
 								System.out.println("Il s'approche de sa proie");
 								setAbs((int)(ab + (xv-ab)*vit/norm));
 								setOrd((int)(or + (yv-or)*vit/norm));
@@ -148,11 +148,11 @@ public class Maquereau extends Poisson{
 		
 		//Gérer la faim (a revoir)
 		
-//		this.faim = this.faim - 5;
-//		if (this.faim <= 0) {
-//		System.out.println("Maquereau meurt de faim"); //cela n'arrive jamais en pratique pour les crevettes
-//		ecosys.getPoissons().remove(this);
-//		}
+		setFaim(getFaim() - 5);  
+		if (getFaim() <= 0) {
+		System.out.println("Maquereau meurt de faim"); //cela n'arrive jamais en pratique pour les crevettes
+		getEco().getPoissons().remove(this);
+		}
 		
 	}
 	
