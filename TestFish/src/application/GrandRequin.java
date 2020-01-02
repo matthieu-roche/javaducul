@@ -32,7 +32,6 @@ public class GrandRequin extends Poisson{
 			if (norm <= distsecu) {
 				this.manger2(voisin); // la proie est mangé
 				System.out.println("Il a mangé la proie");
-				//this.faim = cap; //défini dans le constructeur de poisson, normalement vu que Sardine hérite de poisson ça passe
 				setAbs(xv);
 				setOrd(yv);				
 			}
@@ -84,11 +83,11 @@ public class GrandRequin extends Poisson{
 		
 		//Gérer la faim (a revoir)
 		
-//		this.faim = this.faim - 5;
-//		if (this.faim <= 0) {
-//		System.out.println("Petit Requin meurt de faim"); //cela n'arrive jamais en pratique pour les crevettes
-//		ecosys.getPoissons().remove(this);
-//		}
+		setFaim(getFaim() - 5);  
+		if (getFaim() <= 0) {
+		System.out.println("Grand requin meurt de faim"); //cela n'arrive jamais en pratique pour les crevettes
+		getEco().getPoissons().remove(this);
+		}
 	
 	
 	}

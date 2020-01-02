@@ -113,11 +113,11 @@ public class Crevette extends Poisson{
 		
 		//Gérer la faim (a revoir)
 		
-//		this.faim = this.faim - 5;
-//		if (this.faim <= 0) {
-//		System.out.println("Crevette meurt de faim"); //cela n'arrive jamais en pratique pour les crevettes
-//		ecosys.getPoissons().remove(this);
-//		}
+		setFaim(getFaim() - 5);  
+		if (getFaim() <= 0) {
+		System.out.println("Crevette meurt de faim"); //cela n'arrive jamais en pratique pour les crevettes
+		getEco().getPoissons().remove(this);
+		}
 	
 		
 	}
