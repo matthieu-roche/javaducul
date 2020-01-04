@@ -30,9 +30,22 @@ public class Sardine extends Poisson{
 				if (ab + (xv-ab)*vit/norm > 0) { //Pas trop à gauche
 					if (or + (yv-or)*vit/norm < 300) { //Pas trop bas
 						if (or + (yv-or)*vit/norm > 0) { //Pas trop haut
-							System.out.println("Elle s'approche de sa copine Sardine");
-							setAbs((int)(ab + (xv-ab)*vit/norm));
-							setOrd((int)(or + (yv-or)*vit/norm));
+							// pour vérifier que les nouvelles coordonnées ne seront pas les memes que le voisins ( pas de superposition de poissons)
+							if (ab + (xv-ab)*vit/norm == voisin.getAbs()) { // si l'abscisse est la meme
+								if (!(or + (yv-or)*vit/norm == voisin.getOrd())) { // il faut que l'ordonnée ne soit pas la même
+									System.out.println("Elle s'approche de sa copine Sardine"); // alors ils peuvent se rapprocher
+									setAbs((int)(ab + (xv-ab)*vit/norm));
+									setOrd((int)(or + (yv-or)*vit/norm));
+								}
+								else {
+									System.out.println("Elle est déja très proche de sa copine Sardine"); // sinon c'est qu'ils sont déja assez proche
+								}
+							}
+							else { // si l'abscisse n'est pas la même
+								System.out.println("Elle s'approche de sa copine Sardine"); // il peut s'approcher pas de problèmes
+								setAbs((int)(ab + (xv-ab)*vit/norm));
+								setOrd((int)(or + (yv-or)*vit/norm));
+							}	
 						}
 						else {
 							System.out.println("Elle ne peut pas s'approcher");
@@ -143,7 +156,7 @@ public class Sardine extends Poisson{
 //			System.out.println("Elle bouge de manière normale !");
 //		}
 		
-		//Gérer la faim (a revoir)
+		//Gérer la faim 
 		
 		setFaim(getFaim() - 5);  
 		if (getFaim() <= 0) {
