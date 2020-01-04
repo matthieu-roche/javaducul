@@ -31,9 +31,23 @@ public class Maquereau extends Poisson{
 				if (ab + (xv-ab)*vit/norm > 0) { //Pas trop à gauche
 					if (or + (yv-or)*vit/norm < 300) { //Pas trop bas
 						if (or + (yv-or)*vit/norm > 0) { //Pas trop haut
-							System.out.println("Il s'approche de son copain Maquereau");
-							setAbs((int)(ab + (xv-ab)*vit/norm));
-							setOrd((int)(or + (yv-or)*vit/norm));
+							
+						// pour vérifier que les nouvelles coordonnées ne seront pas les memes que le voisins ( pas de superposition de poissons)
+							if (ab + (xv-ab)*vit/norm == voisin.getAbs()) { // si l'abscisse est la meme
+								if (!(or + (yv-or)*vit/norm == voisin.getOrd())) { // il faut que l'ordonnée ne soit pas la même
+									System.out.println("Il s'approche de son copain Maquereau"); // alors ils peuvent se rapprocher
+									setAbs((int)(ab + (xv-ab)*vit/norm));
+									setOrd((int)(or + (yv-or)*vit/norm));
+								}
+								else {
+									System.out.println("Il est déja très proche de son copain Maquereau"); // sinon c'est qu'ils sont déja assez proche
+								}
+							}
+							else { // si l'abscisse n'est pas la même
+								System.out.println("Il s'approche de son copain Maquereau"); // il peut s'approcher pas de problèmes
+								setAbs((int)(ab + (xv-ab)*vit/norm));
+								setOrd((int)(or + (yv-or)*vit/norm));
+							}	
 						}
 						else {
 							System.out.println("Il ne peut pas s'approcher");
