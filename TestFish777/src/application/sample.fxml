@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="bodybg" stylesheets="@../../bin/application/bodybgpage1.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <center>
+      <Button fx:id="btn" blendMode="SRC_ATOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" style="-fx-background-color: #d89d2e; -fx-border-width: 3;" text="Demarrez le jeu" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" BorderPane.alignment="BOTTOM_RIGHT">
+         <font>
+            <Font name="Britannic Bold" size="19.0" />
+         </font>
+         <effect>
+            <ColorAdjust />
+         </effect>
+         <BorderPane.margin>
+            <Insets bottom="12.0" right="20.0" />
+         </BorderPane.margin>
+      </Button>
+   </center>
+</BorderPane>
